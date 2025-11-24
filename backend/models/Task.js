@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-// TODO: Define your Task schema here
 const taskSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -10,9 +9,13 @@ const taskSchema = new mongoose.Schema({
   completed: {
     type: Boolean,
     default: false
+  },
+  pomodoroCount: {
+    type: Number,
+    default: 0
   }
 }, {
-  timestamps: true  // Adds createdAt and updatedAt
+  timestamps: true
 });
 
 const Task = mongoose.model("Task", taskSchema);
